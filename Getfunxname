@@ -1,0 +1,32 @@
+Join the Slack chat Join the Gitter chat
+
+What is get-func-name?
+This is a module to retrieve a function's name securely and consistently both in NodeJS and the browser.
+
+Installation
+Node.js
+get-func-name is available on npm. To install it, type:
+
+$ npm install get-func-name
+Browsers
+You can also use it within the browser; install via npm and use the get-func-name.js file found within the download. For example:
+
+<script src="./node_modules/get-func-name/get-func-name.js"></script>
+Usage
+The module get-func-name exports the following method:
+
+getFuncName(fn) - Returns the name of a function.
+var getFuncName = require('get-func-name');
+.getFuncName(fun)
+var getFuncName = require('get-func-name');
+
+var unknownFunction = function myCoolFunction(word) {
+   return word + 'is cool'; 
+};
+
+var anonymousFunction = (function () {
+    return function () {};
+}());
+
+getFuncName(unknownFunction) // 'myCoolFunction'
+getFuncName(anonymousFunction) // ''
